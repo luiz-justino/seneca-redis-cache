@@ -6,7 +6,7 @@
 [![npm version](https://img.shields.io/npm/v/@seneca/redis-cache.svg)](https://npmjs.com/package/@seneca/redis-cache)
 [![build](https://github.com/senecajs/seneca-redis-cache/actions/workflows/build.yml/badge.svg)](https://github.com/senecajs/seneca-redis-cache/actions/workflows/build.yml)
 [![Known Vulnerabilities](https://snyk.io/test/github/senecajs/seneca-redis-cache/badge.svg)](https://snyk.io/test/github/senecajs/seneca-redis-cache)
-[![Coveralls][BadgeCoveralls]][Coveralls]
+[![Coverage Status](https://coveralls.io/repos/github/senecajs/seneca-redis-cache/badge.svg?branch=master)](https://coveralls.io/github/senecajs/seneca-redis-cache?branch=master)
 [![DeepScan grade](https://deepscan.io/api/teams/5016/projects/12816/branches/203962/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=5016&pid=12816&bid=203962)
 
 | ![Voxgig](https://www.voxgig.com/res/img/vgt01r.png) | This open source module is sponsored and supported by [Voxgig](https://www.voxgig.com). |
@@ -19,7 +19,7 @@ npm install seneca
 npm install seneca-redis-cache
 ```
 
-### Quick example
+## Quick Example
 
 This code snippet sets a value and then retrieves it.
 
@@ -34,15 +34,6 @@ seneca.ready(function(err) {
     });
   });
 });
-```
-
-<!--START:options-->
-
-## Quick Example
-
-```js
-require('seneca')()
-  .use('seneca-redis-cache', { host: 'localhost', port: 6379 })
 ```
 
 ## More Examples
@@ -70,17 +61,10 @@ If you're using this module and need help, you can:
 
 Set plugin options when loading with:
 ```js
-
 seneca.use('redis-cache', { name: value, ... })
-
 ```
 
-<small>Note: <code>foo.bar</code> in the list above means 
-<code>{ foo: { bar: ... } }</code></small> 
-
-<!--END:options-->
-
-<!--START:action-list-->
+You can also use any of the options from the node [redis](https://github.com/NodeRedis/node_redis#options-object-properties) module directly as options to this plugin.
 
 ### Action Patterns
 
@@ -93,10 +77,6 @@ seneca.use('redis-cache', { name: value, ... })
 * [role:cache,cmd:incr](#-rolecachecmdincr-)
 * [role:cache,cmd:set](#-rolecachecmdset-)
 * [role:cache,get:native](#-rolecachegetnative-)
-
-<!--END:action-list-->
-
-<!--START:action-desc-->
 
 ### Action Descriptions
 
@@ -146,8 +126,6 @@ No description provided.
 
 ----------
 
-<!--END:action-desc-->
-
 ### Common Cache API
 
 Seneca has a common caching API with the following actions:
@@ -167,10 +145,6 @@ To access the underlying [redis](https://github.com/NodeRedis/node_redis), use t
 
 The plugin also registers with the action `role: 'seneca', cmd: 'close'`. This sends the `QUIT` command to the redis connection when you call the `seneca.close` method.
 
-### Options
-
-You can use any of the options from the node [redis](https://github.com/NodeRedis/node_redis#options-object-properties) module directly as options to this plugin.
-
 ## Contributing
 
 The [Senecajs org][] encourage open participation. If you feel you can help in any way, be it with
@@ -186,8 +160,6 @@ npm run test
 
 Uses [ioredis](https://github.com/luin/ioredis) as the Redis client.
 
-[Coveralls]: https://coveralls.io/github/senecajs/seneca-redis-cache?branch=master
-[BadgeCoveralls]: https://coveralls.io/repos/github/senecajs/seneca-redis-cache/badge.svg?branch=master
 [MIT]: ./LICENSE
 [Senecajs org]: https://github.com/senecajs/
 [Seneca.js]: https://www.npmjs.com/package/seneca
