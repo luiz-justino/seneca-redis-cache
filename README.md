@@ -100,9 +100,99 @@ seneca.use('redis-cache', { name: value, ... })
 
 <!--START:action-desc-->
 
-## Contributing
+### Action Descriptions
 
-The [Senecajs org][] encourages open participation. If you feel you can help in any way, be it with documentation, examples, extra testing, or new features please get in touch.
+### &laquo; `init:redis-cache` &raquo;
+
+No description provided.
+
+
+
+----------
+### &laquo; `role:cache,cmd:add` &raquo;
+
+No description provided.
+
+
+
+----------
+### &laquo; `role:cache,cmd:clear` &raquo;
+
+No description provided.
+
+
+
+----------
+### &laquo; `role:cache,cmd:decr` &raquo;
+
+No description provided.
+
+
+
+----------
+### &laquo; `role:cache,cmd:delete` &raquo;
+
+No description provided.
+
+
+
+----------
+### &laquo; `role:cache,cmd:get` &raquo;
+
+No description provided.
+
+
+
+----------
+### &laquo; `role:cache,cmd:incr` &raquo;
+
+No description provided.
+
+
+
+----------
+### &laquo; `role:cache,cmd:set` &raquo;
+
+No description provided.
+
+
+
+----------
+### &laquo; `role:cache,get:native` &raquo;
+
+No description provided.
+
+
+
+----------
+
+
+<!--END:action-desc-->
+
+### Common Cache API
+
+Seneca has a common caching API with the following actions:
+
+   * `role:cache, cmd:set` store a value - _key_ and _val_ arguments required
+   * `role:cache, cmd:get` retreive a value - _key_ argument is required
+   * `role:cache, cmd:add` store a value, only if the key does not exist - _key_ and _val_ arguments required
+   * `role:cache, cmd:delete` delete a value - _key_ argument is required, no error if key does not exist
+   * `role:cache, cmd:incr` increment a value - _key_ and _val_ (integer) arguments required
+   * `role:cache, cmd:decr` decrement a value - _key_ and _val_ (integer) arguments required
+
+All caching plugins, including this one, implement this action API.
+
+### Extended API
+
+To access the underlying [redis](https://github.com/NodeRedis/node_redis), use the action `plugin: 'redis-cache', cmd: 'native'`.
+
+The plugin also registers with the action `role: 'seneca', cmd: 'close'`. This sends the `QUIT` command to the redis connection when you call the `seneca.close` method.
+
+### Options
+
+You can use any of the options from the node [redis](https://github.com/NodeRedis/node_redis#options-object-properties) module directly as options to this plugin.
+
+## Contributing
 
 The [Senecajs org][] encourage open participation. If you feel you can help in any way, be it with
 documentation, examples, extra testing, or new features please get in touch.
