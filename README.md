@@ -9,14 +9,9 @@
 [![npm version][npm-badge]][npm-url]
 [![Build Status][travis-badge]][travis-url]
 [![Coveralls][BadgeCoveralls]][Coveralls]
-[![Maintainability](https://api.codeclimate.com/v1/badges/36abf0f68317851f768d/maintainability)](https://codeclimate.com/github/senecajs/seneca-redis-cache/maintainability)
 [![DeepScan grade](https://deepscan.io/api/teams/5016/projects/12816/branches/203962/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=5016&pid=12816&bid=203962)
 [![Dependency Status][david-badge]][david-url]
 [![Gitter][gitter-badge]][gitter-url]
-
-
-
-
 
 | ![Voxgig](https://www.voxgig.com/res/img/vgt01r.png) | This open source module is sponsored and supported by [Voxgig](https://www.voxgig.com). |
 |---|---|
@@ -44,7 +39,6 @@ seneca.ready(function(err) {
   });
 });
 ```
-
 
 <!--START:options-->
 
@@ -78,21 +72,15 @@ If you're using this module and need help, you can:
 * `redis.port` : number <i><small>6379</small></i>
 * `redis.host` : string <i><small>"127.0.0.1"</small></i>
 
-
 Set plugin options when loading with:
 ```js
 
-
 seneca.use('redis-cache', { name: value, ... })
-
 
 ```
 
-
 <small>Note: <code>foo.bar</code> in the list above means 
 <code>{ foo: { bar: ... } }</code></small> 
-
-
 
 <!--END:options-->
 
@@ -110,7 +98,6 @@ seneca.use('redis-cache', { name: value, ... })
 * [role:cache,cmd:set](#-rolecachecmdset-)
 * [role:cache,get:native](#-rolecachegetnative-)
 
-
 <!--END:action-list-->
 
 <!--START:action-desc-->
@@ -121,66 +108,47 @@ seneca.use('redis-cache', { name: value, ... })
 
 No description provided.
 
-
-
 ----------
 ### &laquo; `role:cache,cmd:add` &raquo;
 
 No description provided.
-
-
 
 ----------
 ### &laquo; `role:cache,cmd:clear` &raquo;
 
 No description provided.
 
-
-
 ----------
 ### &laquo; `role:cache,cmd:decr` &raquo;
 
 No description provided.
-
-
 
 ----------
 ### &laquo; `role:cache,cmd:delete` &raquo;
 
 No description provided.
 
-
-
 ----------
 ### &laquo; `role:cache,cmd:get` &raquo;
 
 No description provided.
-
-
 
 ----------
 ### &laquo; `role:cache,cmd:incr` &raquo;
 
 No description provided.
 
-
-
 ----------
 ### &laquo; `role:cache,cmd:set` &raquo;
 
 No description provided.
-
-
 
 ----------
 ### &laquo; `role:cache,get:native` &raquo;
 
 No description provided.
 
-
-
 ----------
-
 
 <!--END:action-desc-->
 
@@ -224,14 +192,8 @@ Uses [ioredis](https://github.com/luin/ioredis) as the Redis client.
 
 [npm-badge]: https://img.shields.io/npm/v/seneca-redis-cache.svg
 [npm-url]: https://npmjs.com/package/seneca-redis-cache
-[travis-badge]: https://travis-ci.org/senecajs/seneca-redis-cache.svg
-[travis-url]: https://travis-ci.org/senecajs/seneca-redis-cache
-[codeclimate-badge]: https://codeclimate.com/github/senecajs/seneca-redis-cache/badges/gpa.svg
-[codeclimate-url]: https://codeclimate.com/github/senecajs/seneca-redis-cache
 [Coveralls]: https://coveralls.io/github/senecajs/seneca-redis-cache?branch=master
 [BadgeCoveralls]: https://coveralls.io/repos/github/senecajs/seneca-redis-cache/badge.svg?branch=master
-[david-badge]: https://david-dm.org/senecajs/seneca-redis-cache.svg
-[david-url]: https://david-dm.org/senecajs/seneca-redis-cache
 [gitter-badge]: https://badges.gitter.im/Join%20Chat.svg
 [gitter-url]: https://gitter.im/senecajs/seneca
 [MIT]: ./LICENSE
