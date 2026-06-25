@@ -6,12 +6,8 @@
 [![npm version](https://img.shields.io/npm/v/@seneca/redis-cache.svg)](https://npmjs.com/package/@seneca/redis-cache)
 [![build](https://github.com/senecajs/seneca-redis-cache/actions/workflows/build.yml/badge.svg)](https://github.com/senecajs/seneca-redis-cache/actions/workflows/build.yml)
 [![Known Vulnerabilities](https://snyk.io/test/github/senecajs/seneca-redis-cache/badge.svg)](https://snyk.io/test/github/senecajs/seneca-redis-cache)
-[![npm version][npm-badge]][npm-url]
-[![Build Status][travis-badge]][travis-url]
 [![Coveralls][BadgeCoveralls]][Coveralls]
 [![DeepScan grade](https://deepscan.io/api/teams/5016/projects/12816/branches/203962/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=5016&pid=12816&bid=203962)
-[![Dependency Status][david-badge]][david-url]
-[![Gitter][gitter-badge]][gitter-url]
 
 | ![Voxgig](https://www.voxgig.com/res/img/vgt01r.png) | This open source module is sponsored and supported by [Voxgig](https://www.voxgig.com). |
 |---|---|
@@ -190,12 +186,8 @@ npm run test
 
 Uses [ioredis](https://github.com/luin/ioredis) as the Redis client.
 
-[npm-badge]: https://img.shields.io/npm/v/seneca-redis-cache.svg
-[npm-url]: https://npmjs.com/package/seneca-redis-cache
 [Coveralls]: https://coveralls.io/github/senecajs/seneca-redis-cache?branch=master
 [BadgeCoveralls]: https://coveralls.io/repos/github/senecajs/seneca-redis-cache/badge.svg?branch=master
-[gitter-badge]: https://badges.gitter.im/Join%20Chat.svg
-[gitter-url]: https://gitter.im/senecajs/seneca
 [MIT]: ./LICENSE
 [Senecajs org]: https://github.com/senecajs/
 [Seneca.js]: https://www.npmjs.com/package/seneca
