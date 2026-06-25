@@ -1,23 +1,10 @@
 ![Seneca](http://senecajs.org/files/assets/seneca-logo.png)
+> A [Seneca.js][] plugin
 
-# seneca-redis-cache
-[![npm version][npm-badge]][npm-url]
-[![Build Status][travis-badge]][travis-url]
-[![Coveralls][BadgeCoveralls]][Coveralls]
-[![Maintainability](https://api.codeclimate.com/v1/badges/36abf0f68317851f768d/maintainability)](https://codeclimate.com/github/senecajs/seneca-redis-cache/maintainability)
-[![DeepScan grade](https://deepscan.io/api/teams/5016/projects/12816/branches/203962/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=5016&pid=12816&bid=203962)
-[![Dependency Status][david-badge]][david-url]
-[![Gitter][gitter-badge]][gitter-url]
+# @seneca/redis-cache
 
-### Description
-
-This module is a plugin for the [Seneca framework](http://senecajs.org). It provides a set of common caching actions (`get`, `set` etc.), backed by [redis](https://github.com/NodeRedis/node_redis).
-
-By moving cache operations into Seneca, you can change your cache implementation or business rules at a later point.
-For example, you might decide to send certain kinds of keys to a different cache mechanism, such as redis.
-
-### Seneca compatibility
-Supports Seneca versions **1.x**, **2.x** and **3.x**
+| ![Voxgig](https://www.voxgig.com/res/img/vgt01r.png) | This open source module is sponsored and supported by [Voxgig](https://www.voxgig.com). |
+|---|---|
 
 ## Install
 
@@ -46,8 +33,31 @@ seneca.ready(function(err) {
 
 <!--START:options-->
 
+## Quick Example
 
-## Options
+```js
+require('seneca')()
+  .use('seneca-redis-cache', { host: 'localhost', port: 6379 })
+```
+
+## More Examples
+
+See [test/](test/) for usage examples.
+
+## Motivation
+
+Redis caching plugin for the Seneca framework.
+
+## Support
+
+If you're using this module and need help, you can:
+
+- Post a [github issue][]
+- Tweet to [@senecajs][]
+
+## API
+
+### Options
 
 * `expire` : number <i><small>3600</small></i>
 * `redis.port` : number <i><small>6379</small></i>
@@ -73,8 +83,7 @@ seneca.use('redis-cache', { name: value, ... })
 
 <!--START:action-list-->
 
-
-## Action Patterns
+### Action Patterns
 
 * [init:redis-cache](#-initrediscache-)
 * [role:cache,cmd:add](#-rolecachecmdadd-)
@@ -91,115 +100,30 @@ seneca.use('redis-cache', { name: value, ... })
 
 <!--START:action-desc-->
 
-
-## Action Descriptions
-
-### &laquo; `init:redis-cache` &raquo;
-
-No description provided.
-
-
-
-----------
-### &laquo; `role:cache,cmd:add` &raquo;
-
-No description provided.
-
-
-
-----------
-### &laquo; `role:cache,cmd:clear` &raquo;
-
-No description provided.
-
-
-
-----------
-### &laquo; `role:cache,cmd:decr` &raquo;
-
-No description provided.
-
-
-
-----------
-### &laquo; `role:cache,cmd:delete` &raquo;
-
-No description provided.
-
-
-
-----------
-### &laquo; `role:cache,cmd:get` &raquo;
-
-No description provided.
-
-
-
-----------
-### &laquo; `role:cache,cmd:incr` &raquo;
-
-No description provided.
-
-
-
-----------
-### &laquo; `role:cache,cmd:set` &raquo;
-
-No description provided.
-
-
-
-----------
-### &laquo; `role:cache,get:native` &raquo;
-
-No description provided.
-
-
-
-----------
-
-
-<!--END:action-desc-->
-
-
-
-## Common Cache API
-
-Seneca has a common caching API with the following actions:
-
-   * `role:cache, cmd:set` store a value - _key_ and _val_ arguments required
-   * `role:cache, cmd:get` retreive a value - _key_ argument is required
-   * `role:cache, cmd:add` store a value, only if the key does not exist - _key_ and _val_ arguments required
-   * `role:cache, cmd:delete` delete a value - _key_ argument is required, no error if key does not exist
-   * `role:cache, cmd:incr` increment a value - _key_ and _val_ (integer) arguments required
-   * `role:cache, cmd:decr` decrement a value - _key_ and _val_ (integer) arguments required
-
-All caching plugins, including this one, implement this action API.
-
-## Extended API
-
-To access the underlying [redis](https://github.com/NodeRedis/node_redis), use the action `plugin: 'redis-cache', cmd: 'native'`.
-
-The plugin also registers with the action `role: 'seneca', cmd: 'close'`. This sends the `QUIT` command to the redis connection when you call the `seneca.close` method.
-
-### Options
-
-You can use any of the options from the node [redis](https://github.com/NodeRedis/node_redis#options-object-properties) module directly as options to this plugin.
-
 ## Contributing
+
+The [Senecajs org][] encourages open participation. If you feel you can help in any way, be it with documentation, examples, extra testing, or new features please get in touch.
+
 The [Senecajs org][] encourage open participation. If you feel you can help in any way, be it with
 documentation, examples, extra testing, or new features please get in touch.
 
-## Test
+### Running tests
 
-```bash
+```sh
 npm run test
 ```
 
-## License
-Copyright (c) 2014-2016, Seamus D'Arcy and other contributors.
-Licensed under [MIT][].
+## Background
 
+Uses [ioredis](https://github.com/luin/ioredis) as the Redis client.
+
+[![npm version][npm-badge]][npm-url]
+[![Build Status][travis-badge]][travis-url]
+[![Coveralls][BadgeCoveralls]][Coveralls]
+[![Maintainability](https://api.codeclimate.com/v1/badges/36abf0f68317851f768d/maintainability)](https://codeclimate.com/github/senecajs/seneca-redis-cache/maintainability)
+[![DeepScan grade](https://deepscan.io/api/teams/5016/projects/12816/branches/203962/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=5016&pid=12816&bid=203962)
+[![Dependency Status][david-badge]][david-url]
+[![Gitter][gitter-badge]][gitter-url]
 [npm-badge]: https://img.shields.io/npm/v/seneca-redis-cache.svg
 [npm-url]: https://npmjs.com/package/seneca-redis-cache
 [travis-badge]: https://travis-ci.org/senecajs/seneca-redis-cache.svg
