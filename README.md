@@ -17,7 +17,7 @@
 ```sh
 npm install seneca
 npm install seneca-redis-cache
-```
+```js
 
 ## Quick Example
 
@@ -34,7 +34,7 @@ seneca.ready(function(err) {
     });
   });
 });
-```
+```js
 
 ## More Examples
 
@@ -64,7 +64,7 @@ If you're using this module and need help, you can:
 Set plugin options when loading with:
 ```js
 seneca.use('redis-cache', { name: value, ... })
-```
+```js
 
 You can also use any of the options from the node [redis](https://github.com/NodeRedis/node_redis#options-object-properties) module directly as options to this plugin.
 
@@ -156,7 +156,7 @@ documentation, examples, extra testing, or new features please get in touch.
 
 ```sh
 npm run test
-```
+```js
 
 ## Background
 
