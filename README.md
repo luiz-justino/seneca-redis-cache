@@ -14,16 +14,15 @@
 
 ## Install
 
-```sh
+```
 npm install seneca
 npm install seneca-redis-cache
-```js
-
+```
 ## Quick Example
 
 This code snippet sets a value and then retrieves it.
 
-```js
+```
 var seneca = require('seneca')();
 seneca.use('redis-cache');
 
@@ -34,8 +33,7 @@ seneca.ready(function(err) {
     });
   });
 });
-```js
-
+```
 ## More Examples
 
 See [test/](test/) for usage examples.
@@ -62,10 +60,9 @@ If you're using this module and need help, you can:
 * `redis.host` : string <i><small>"127.0.0.1"</small></i>
 
 Set plugin options when loading with:
-```js
+```
 seneca.use('redis-cache', { name: value, ... })
-```js
-
+```
 You can also use any of the options from the node [redis](https://github.com/NodeRedis/node_redis#options-object-properties) module directly as options to this plugin.
 
 ### Action Patterns
@@ -154,10 +151,9 @@ documentation, examples, extra testing, or new features please get in touch.
 
 ### Running tests
 
-```sh
+```
 npm run test
-```js
-
+```
 ## Background
 
 Uses [ioredis](https://github.com/luin/ioredis) as the Redis client.
